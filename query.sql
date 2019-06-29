@@ -1,0 +1,7 @@
+USE cc_project_database;
+CREATE TABLE `cc_project_database`.`user` ( `id` INT(8) NOT NULL AUTO_INCREMENT , `name` VARCHAR(20) NOT NULL , `password` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `cc_project_database`.`election` ( `id` INT(8) NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `active` BOOLEAN NOT NULL , `a` VARCHAR(20) NOT NULL , `b` VARCHAR(20) NOT NULL , `c` VARCHAR(20) NOT NULL , `d` VARCHAR(20) NOT NULL , `ac` INT(8) NOT NULL , `bc` INT(8) NOT NULL , `cc` INT(8) NOT NULL , `dc` INT(8) NOT NULL , `uc` INT(8) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `cc_project_database`.`vote` ( `userID` INT(8) NOT NULL , `electionID` INT(8) NOT NULL , `vote` VARCHAR(20) NOT NULL , PRIMARY KEY (`userID`, `electionID`)) ENGINE = InnoDB;
+ALTER TABLE `vote` ADD FOREIGN KEY (`electionID`) REFERENCES `election`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `vote` ADD FOREIGN KEY (`userID`) REFERENCES `user`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+INSERT INTO `user` (`name`, `password`) VALUES ('test', 'test');
+INSERT INTO `election` (`id`, `name`, `active`, `a`, `b`, `c`, `d`, `ac`, `bc`, `cc`, `dc`, `uc`) VALUES (NULL, 'اولین انتخابات', '1', 'کاندیدا اول', 'کاندیدا دوم', 'کاندیدا سوم', 'کاندیدا چهارم', '0', '0', '0', '0', '0');

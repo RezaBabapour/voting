@@ -1,0 +1,46 @@
+version: '3'
+services: 
+  db_service:
+    image: 'mysql:5.7'
+    restart: always
+    volumes:
+      - /home/user/voting/MySQL:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=cc_project_database
+      - MYSQL_USER=auth_service_user
+      - MYSQL_PASSWORD=Auth_service@1397
+    container_name: db_service
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+
+  panel:
+    image: 'php:ctm'
+    volumes:
+      - /home/user/voting/Panel:/var/www/html
+    ports:
+      - '80:80'
+
+  authentication:
+    image: 'php:ctm'
+    volumes:
+      - /home/user/voting/Authentication:/var/www/html
+    ports:
+      - '8080:80'
+  
+  Master:
+    image: 'php:ctm'
+    volumes:
+      - /home/user/voting/Master:/var/www/html
+    ports:
+      - '82:80'
+
+  Portal:
+    image: 'php:ctm'
+    volumes:
+      - /home/user/voting/Portal:/var/www/html
+    ports:
+      - '83:80'
+

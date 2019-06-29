@@ -1,0 +1,81 @@
+.center {
+    margin: auto;
+    padding: 2%;
+    border-radius: 5px;
+    margin-bottom: 1%;
+}
+body {
+    background-color: lightblue;
+}
+
+#loginform{
+	width: 20%;	
+	border: 3px solid #73AD21;
+	background-color: #e5dd4b;
+	text-align: center;
+}
+
+#intro{
+	width: 20%;
+	border: 3px solid #73AD21;
+	background-color: #e5dd4b;
+	text-align: center;
+}
+
+#menu{
+	background-color: lightblue;
+	text-align: center;
+
+
+}
+
+#menu a{
+	padding: 5px;
+	margin: 5px;
+	text-decoration: none;
+	background-color: #d5ed9e;
+	border: 2px solid #f9c184;
+	border-radius: 5px;
+}
+
+#news{
+
+	height: auto;
+	background-color: #f7f7ed;
+	border-radius: 5px;
+}
+
+#presented{
+	width: auto;
+	height: auto;
+	margin: 1%;
+	padding: 1%;
+	background-color: #71eefc;
+	border: 2px solid #f9c184;
+	border-radius: 5px;
+}
+
+#chosen{
+	width: auto;
+	height: auto;
+	margin: 1%;
+	padding: 1%;
+	background-color: #76fc71;
+	border: 2px solid #f9c184;
+	border-radius: 5px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
